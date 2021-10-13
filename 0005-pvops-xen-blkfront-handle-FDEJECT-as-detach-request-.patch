@@ -19,16 +19,16 @@ index 59f57e55a36b..1052b95bc9a9 100644
  #include <linux/sched/mm.h>
  
  #include <xen/xen.h>
-@@ -522,6 +523,9 @@ static int blkif_ioctl(struct block_device *bdev, fmode_t mode,
+@@ -516,6 +517,10 @@ static int blkif_ioctl(struct block_device *bdev, fmode_t mode,
+ 		if (bdev->bd_disk->flags & GENHD_FL_CD)
  			return 0;
  		return -EINVAL;
- 	}
-+	case FDEJECT:
-+		xenbus_switch_state(info->xbdev, XenbusStateClosing);
-+		return 0;
- 
++        case FDEJECT:
++               xenbus_switch_state(info->xbdev, XenbusStateClosing);
++               return 0;
++
  	default:
- 		/*printk(KERN_ALERT "ioctl %08x not supported by Xen blkdev\n",
+ 		return -EINVAL;
+ 	}
 -- 
 2.25.4
-
