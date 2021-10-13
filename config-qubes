@@ -141,6 +141,12 @@ CONFIG_XEN_GNTDEV_DMABUF=y
 CONFIG_EFI_VARS_PSTORE=y
 
 ################################################################################
+## AMD specific flags for suspend/resume in RC4.1
+
+CONFIG_AMD_PMC=y
+# CONFIG_HSA_AMD is not set
+
+################################################################################
 ## TODO: from diff to old config
 
 ## CONFIG_X86_AMD_PLATFORM_DEVICE=y
