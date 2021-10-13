@@ -10,10 +10,10 @@ Ease debugging of PCI passthrough problems.
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/xen/events/events_base.c b/drivers/xen/events/events_base.c
-index 3a791c8485d0..b75bcebc635b 100644
+index d7e361fb0548..b606fd34cffb 100644
 --- a/drivers/xen/events/events_base.c
 +++ b/drivers/xen/events/events_base.c
-@@ -522,7 +522,7 @@ static unsigned int __startup_pirq(unsigned int irq)
+@@ -879,7 +879,7 @@ static unsigned int __startup_pirq(unsigned int irq)
  					BIND_PIRQ__WILL_SHARE : 0;
  	rc = HYPERVISOR_event_channel_op(EVTCHNOP_bind_pirq, &bind_pirq);
  	if (rc != 0) {

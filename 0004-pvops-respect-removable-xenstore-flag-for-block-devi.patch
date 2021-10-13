@@ -10,10 +10,10 @@ by normal user.
  1 file changed, 7 insertions(+)
 
 diff --git a/drivers/block/xen-blkfront.c b/drivers/block/xen-blkfront.c
-index 3b889ea950c2..59f57e55a36b 100644
+index d83fee21f6c5..57cc2c960a14 100644
 --- a/drivers/block/xen-blkfront.c
 +++ b/drivers/block/xen-blkfront.c
-@@ -2347,6 +2347,7 @@ static void blkfront_connect(struct blkfront_info *info)
+@@ -2265,6 +2265,7 @@ static void blkfront_connect(struct blkfront_info *info)
  	unsigned int binfo;
  	int err, i;
  	struct blkfront_ring_info *rinfo;
@@ -21,7 +21,7 @@ index 3b889ea950c2..59f57e55a36b 100644
  
  	switch (info->connected) {
  	case BLKIF_STATE_CONNECTED:
-@@ -2411,6 +2412,12 @@ static void blkfront_connect(struct blkfront_info *info)
+@@ -2329,6 +2330,12 @@ static void blkfront_connect(struct blkfront_info *info)
  		}
  	}
  

@@ -24,7 +24,7 @@ diff --git a/drivers/pci/xen-pcifront.c b/drivers/pci/xen-pcifront.c
 index d1b16cf3403f..4d6f2513b104 100644
 --- a/drivers/pci/xen-pcifront.c
 +++ b/drivers/pci/xen-pcifront.c
-@@ -297,7 +297,7 @@ static int pci_frontend_enable_msix(struct pci_dev *dev,
+@@ -291,7 +291,7 @@ static int pci_frontend_enable_msix(struct pci_dev *dev,
  	} else {
  		pci_err(dev, "enable msix get err %x\n", err);
  	}
@@ -34,10 +34,10 @@ index d1b16cf3403f..4d6f2513b104 100644
  
  static void pci_frontend_disable_msix(struct pci_dev *dev)
 diff --git a/drivers/xen/xen-pciback/pciback_ops.c b/drivers/xen/xen-pciback/pciback_ops.c
-index 787966f44589..0574c9121124 100644
+index 3fbc21466a93..0de5a8092799 100644
 --- a/drivers/xen/xen-pciback/pciback_ops.c
 +++ b/drivers/xen/xen-pciback/pciback_ops.c
-@@ -266,7 +266,7 @@ int xen_pcibk_enable_msix(struct xen_pcibk_device *pdev,
+@@ -249,7 +249,7 @@ int xen_pcibk_enable_msix(struct xen_pcibk_device *pdev,
  	if (dev_data)
  		dev_data->ack_intr = 0;
  
