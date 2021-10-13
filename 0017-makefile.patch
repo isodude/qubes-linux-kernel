@@ -1,0 +1,11 @@
+--- a/Makefile	2021-10-13 18:53:53.411000000 +0200
++++ b/Makefile	2021-10-13 18:55:17.791000000 +0200
+@@ -20,7 +20,7 @@ __all:
+ 
+ # Set RHEL variables
+ # Use this spot to avoid future merge conflicts
+-include Makefile.rhelver
++include ../linux-*/Makefile.rhelver
+ 
+ # We are using a recursive build, so we need to do a little thinking
+ # to get the ordering right.

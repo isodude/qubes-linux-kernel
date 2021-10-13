@@ -135,6 +135,7 @@ Patch15: 0002-Revert-xen-netback-remove-hotplug-status-once-it-has.patch
 # Patch16: 0001-PCI-MSI-Skip-masking-MSI-X-on-Xen-PV.patch
 Patch17: 0014-remove-pci-msix-vec-count.patch
 Patch18: 0015-PCI-MSI-Skip-masking-MSI-X-on-Xen-PV-2.patch
+Patch19: 0017-makefile.patch
 # Needs rework
 # Patch4: 0005-pvops-xen-blkfront-handle-FDEJECT-as-detach-request-.patch
 # Patch5: 0006-block-add-no_part_scan-module-parameter.patch
