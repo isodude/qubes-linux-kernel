@@ -7,7 +7,7 @@ index 0099a00af361..c91f7500d64d 100644
  	unsigned long flags;
 
 +        if (pci_msi_ignore_mask || desc->msi_attrib.is_virtual)
-+		return 0;
++		return;
 +
  	raw_spin_lock_irqsave(lock, flags);
  	desc->msi_mask &= ~clear;
@@ -17,7 +17,7 @@ index 0099a00af361..c91f7500d64d 100644
  	void __iomem *desc_addr = pci_msix_desc_addr(desc);
 
 +        if (pci_msi_ignore_mask || desc->msi_attrib.is_virtual)
-+		return 0;
++		return;
 +
  	writel(ctrl, desc_addr + PCI_MSIX_ENTRY_VECTOR_CTRL);
  }
