@@ -144,6 +144,7 @@ CONFIG_EFI_VARS_PSTORE=y
 ## AMD specific flags for suspend/resume in RC4.1
 
 CONFIG_AMD_PMC=y
+CONFIG_RHEL_DIFFERENCES=y
 # CONFIG_HSA_AMD is not set
 
 ################################################################################
