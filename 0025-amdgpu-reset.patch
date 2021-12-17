@@ -1,0 +1,19 @@
+diff --git a/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c b/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c
+index 7d4115d..f6e1a6a 100644
+--- a/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c
++++ b/drivers/gpu/drm/amd/amdgpu/amdgpu_device.c
+@@ -3983,6 +3983,14 @@ int amdgpu_device_resume(struct drm_device *dev, bool fbcon)
+ 	if (adev->in_s0ix)
+ 		amdgpu_gfx_state_change_set(adev, sGpuChangeState_D0Entry);
+ 
++	/*TODO: In order to not let all-always asic reset affect resume latency
++	 * need sort out the case which really need asic reset in the resume process.
++	 * As to the known issue on the system suspend abort behind the AMDGPU suspend,
++	 * may can sort this case by checking struct suspend_stats which need exported
++	 * firstly.
++	 */
++	if (adev->flags & AMD_IS_APU)
++		amdgpu_asic_reset(adev);
+ 	/* post card */
+ 	if (amdgpu_device_need_post(adev)) {
+ 		r = amdgpu_device_asic_init(adev);

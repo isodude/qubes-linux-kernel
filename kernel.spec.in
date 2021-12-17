@@ -125,6 +125,7 @@ Patch12: 0013-xen-pcifront-pciback-Update-pciif.h-with-err-and-res.patch
 Patch14: 0001-Revert-xen-netback-Check-for-hotplug-status-existenc.patch
 Patch15: 0002-Revert-xen-netback-remove-hotplug-status-once-it-has.patch
 Patch19: 0017-makefile.patch
+Patch25: 0025-amdgpu-reset.patch
 
 %description
 Qubes Dom0 kernel.
