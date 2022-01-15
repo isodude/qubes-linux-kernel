@@ -1,0 +1,24 @@
+--- a/drivers/block/xen-blkfront.c	2022-01-15 02:58:46.000000000 +0100
++++ b/drivers/block/xen-blkfront.c	2022-01-15 03:38:29.056000000 +0100
+@@ -2312,6 +2312,7 @@ static void blkfront_connect(struct blkf
+ 	unsigned int physical_sector_size;
+ 	int err, i;
+ 	struct blkfront_ring_info *rinfo;
++	int removable;
+ 
+ 	switch (info->connected) {
+ 	case BLKIF_STATE_CONNECTED:
+@@ -2376,6 +2377,12 @@ static void blkfront_connect(struct blkf
+ 		}
+ 	}
+ 
++	err = xenbus_gather(XBT_NIL, info->xbdev->otherend,
++			    "removable", "%d", &removable,
++			    NULL);
++	if (!err && removable)
++		info->vdisk_info |= VDISK_REMOVABLE;
++
+ 	err = xlvbd_alloc_gendisk(sectors, info, sector_size,
+ 				  physical_sector_size);
+ 	if (err) {
+

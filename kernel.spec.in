@@ -120,12 +120,13 @@ Source101:      config-qubes
 
 Patch1: 0002-mce-hide-EBUSY-initialization-error-on-Xen.patch
 Patch2: 0003-Log-error-code-of-EVTCHNOP_bind_pirq-failure.patch
-Patch3: 0004-pvops-respect-removable-xenstore-flag-for-block-devi.patch
+# Patch3: 0004-pvops-respect-removable-xenstore-flag-for-block-devi.patch
 Patch12: 0013-xen-pcifront-pciback-Update-pciif.h-with-err-and-res.patch
 Patch14: 0001-Revert-xen-netback-Check-for-hotplug-status-existenc.patch
 Patch15: 0002-Revert-xen-netback-remove-hotplug-status-once-it-has.patch
 Patch19: 0017-makefile.patch
 Patch25: 0025-amdgpu-reset.patch
+Patch26: 0026-blkfront.patch
 
 %description
 Qubes Dom0 kernel.
